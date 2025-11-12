@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Jemparingan Color Palette */
+    --background: 56 100% 80%; /* #FFFB97 - Kuning muda */
+    --foreground: 0 23% 13%; /* #2A1617 - Hitam gelap */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 23% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 23% 13%;
+
+    --primary: 16 98% 63%; /* #FE7F42 - Oranye */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 56 100% 80%; /* #FFFB97 - Kuning muda */
+    --secondary-foreground: 0 23% 13%;
+
+    --muted: 8 25% 38%; /* #7A4B47 - Coklat lembut */
+    --muted-foreground: 0 0% 100%;
+
+    --accent: 8 25% 38%; /* #7A4B47 - Coklat */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 8 72% 41%; /* #B32C1A - Merah tua */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 23% 13% / 0.2;
+    --input: 0 0% 100%;
+    --ring: 16 98% 63%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
