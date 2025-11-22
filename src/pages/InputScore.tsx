@@ -27,7 +27,10 @@ const InputScore = () => {
   const [tempScore, setTempScore] = useState<number>(0);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const players = Array.from({ length: 10 }, (_, i) => `P${String(i + 1).padStart(2, "0")}`);
+  const players = Array.from(
+    { length: 10 },
+    (_, i) => `P${String(i + 1).padStart(2, "0")}`
+  );
   const arrows = ["1", "2", "3", "4", "5", "6"];
 
   const handleScoreClick = (points: number) => {
@@ -150,25 +153,28 @@ const InputScore = () => {
           <DialogContent className="max-w-sm">
             <DialogHeader>
               <DialogTitle className="text-center text-xl">
-                Berhasil Disimpan! 🎯
+                🏹Berhasil Disimpan!🎯
               </DialogTitle>
-              <DialogDescription className="text-center">
+              <DialogDescription className="text-center text-base text-black">
                 Skor telah berhasil disimpan untuk {selectedPlayer}
               </DialogDescription>
             </DialogHeader>
             <div className="flex flex-col gap-3 mt-4">
-              <Button onClick={() => navigate("/")} variant="default">
-                Kembali ke Beranda
-              </Button>
               <Button
                 onClick={() => {
                   setShowSuccess(false);
                   setSelectedPlayer("");
                   setSelectedArrow("");
                 }}
-                variant="outline"
+                className="bg-[#B32B1B] text-white hover text-base shadow-xl"
               >
                 Input Lainnya
+              </Button>
+              <Button
+                onClick={() => navigate("/")}
+                className="bg-[#FD7F42] text-white hover:bg-[#D9D9D9] text-base shadow-xl"
+              >
+                Kembali ke Beranda
               </Button>
             </div>
           </DialogContent>
