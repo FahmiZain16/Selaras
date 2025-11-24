@@ -49,6 +49,7 @@ const InputScore = () => {
 
     const roundIndex = parseInt(id || "1") - 1;
     updateScore(selectedPlayer, roundIndex, [selectedScore]);
+    localStorage.setItem(`round-${id}`, "done");
     setShowSuccess(true);
     setSelectedScore(null);
   };
