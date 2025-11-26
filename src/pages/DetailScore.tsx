@@ -53,11 +53,12 @@ const DetailScore = () => {
         <div className="mb-2">
           <Button
             onClick={() => navigate("/")}
+            variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 bg-primary hover:bg-orange-600 text-[#2A1617]"
+            className="mb-4 -ml-2 bg-[#FD7F42] rounded-2xl"
           >
-            <ArrowLeft className="w-4 h-4 mr-2 text-[#2A1617]" />
-            Back
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Kembali
           </Button>
 
           {/* Header */}
