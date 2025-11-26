@@ -48,8 +48,8 @@ const DetailScore = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-start justify-center p-4 overflow-x-auto">
-      <div className="w-full max-w-md bg-[#2A1617] rounded-lg shadow-lg pl-6 py-6">
+    <div className="min-h-screen bg-white flex items-start justify-center overflow-x-auto">
+      <div className="w-full max-w-md bg-[#2A1617] shadow-lg pl-6 py-6">
         <div className="mb-2">
           <Button
             onClick={() => navigate("/")}

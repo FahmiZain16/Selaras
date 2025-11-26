@@ -15,8 +15,8 @@ const Leaderboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center p-6">
-      <div className="w-full max-w-md bg-[#2A1617] rounded-lg p-6">
+    <div className="min-h-screen bg-[#2A1617] flex flex-col items-center">
+      <div className="w-full max-w-md bg-[#2A1617] p-6">
 
         /*kembali & amplop */
         <div className="flex justify-between items-center w-full px-2">

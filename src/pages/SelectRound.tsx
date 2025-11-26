@@ -13,8 +13,8 @@ const SelectRound = () => {
   }, [rounds]);  
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4">
-      <div className="w-full max-w-mobile bg-[#2A1617] rounded-3xl shadow-lg p-6">
+    <div className="min-h-screen bg-[#2A1617] flex items-center justify-center">
+      <div className="w-full max-w-mobile bg-[#2A1617] shadow-lg p-6">
         <div className="mb-6">
           <Button
             onClick={() => navigate("/")}
