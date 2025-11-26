@@ -26,6 +26,7 @@ const InputScore = () => {
   const [selectedArrow, setSelectedArrow] = useState<string>("");
   const [selectedScore, setSelectedScore] = useState<number | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const players = Array.from(
     { length: 10 },
@@ -35,18 +36,20 @@ const InputScore = () => {
 
   const handleScoreClick = (points: number) => {
     if (!selectedPlayer || !selectedArrow) {
-      alert("Pilih pemain dan nomor panah terlebih dahulu!");
+      setErrorMessage("Pilih pemain dan nomor panah terlebih dahulu!");
       return;
     }
+    setErrorMessage("");
     setSelectedScore(points);
   };
 
   const handleSave = () => {
     if (!selectedPlayer || !selectedArrow || selectedScore === null) {
-      alert("Lengkapi data terlebih dahulu!");
+      setErrorMessage("Lengkapi data terlebih dahulu!");
       return;
     }
 
+    setErrorMessage("");
     const roundIndex = parseInt(id || "1") - 1;
     updateScore(selectedPlayer, roundIndex, [selectedScore]);
     localStorage.setItem(`round-${id}`, "done");
@@ -77,7 +80,7 @@ const InputScore = () => {
           </p>
         </div>
 
-        <div className="space-y-4 mb-6">
+        <div className="space-y-4 mb-1">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-white mb-2">
@@ -130,7 +133,19 @@ const InputScore = () => {
           </Card>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        {errorMessage && (
+          // <div 
+          //   className="mb-4 p-3 rounded-2xl text-center text-sm font-medium"
+          //   style={{ backgroundColor: '#FFFB97', color: '#2A1617' }}
+          // >
+          //   {errorMessage}
+          // </div>
+          <p className="text-[#fffb97] pb-2 text-center">
+            {errorMessage}
+          </p>
+        )}
+
+        <div className="grid grid-cols-2 gap-4 my-6">
           <Button
             onClick={() => handleScoreClick(3)}
             className={`py-8 text-2xl font-bold text-white relative overflow-hidden transition-all rounded-3xl ${
