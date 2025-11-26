@@ -27,10 +27,10 @@ const DetailScore = () => {
             onClick={() => navigate("/")}
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2"
+            className="mb-4 -ml-2 bg-[#FD7F42] rounded-2xl"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Kembali ke Beranda
+            Kembali
           </Button>
           <h1 className="text-2xl font-bold text-foreground text-center">
             Detail Skor

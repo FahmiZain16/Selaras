@@ -10,7 +10,7 @@ const SelectRound = () => {
   useEffect(() => {
     const done = rounds.filter((r) =>  localStorage.getItem(`round-${r}`) === "done");
     setCompleted(done);
-  }, []);  
+  }, [rounds]);  
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-4">
